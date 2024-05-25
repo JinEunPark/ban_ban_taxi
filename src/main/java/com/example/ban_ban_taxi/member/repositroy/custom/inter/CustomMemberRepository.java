@@ -1,4 +1,4 @@
-package com.example.ban_ban_taxi.member.repositroy.custom;
+package com.example.ban_ban_taxi.member.repositroy.custom.inter;
 
 import com.example.ban_ban_taxi.member.model.Member;
 import org.springframework.data.jpa.repository.JpaRepository;

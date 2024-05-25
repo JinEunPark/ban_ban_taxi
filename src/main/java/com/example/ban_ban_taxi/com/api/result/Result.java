@@ -1,4 +1,4 @@
-package com.example.ban_ban_taxi.com.result;
+package com.example.ban_ban_taxi.com.api.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

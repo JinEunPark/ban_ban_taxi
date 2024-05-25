@@ -7,10 +7,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+//명명 규칙 {entity명 + repository + Impl}
 @Repository
 @RequiredArgsConstructor
-public class CustomMemberRepositoryImpl implements CustomMemberRepository {
+public class MemberRepositoryImpl implements CustomMemberRepository {
 
     private final EntityManager em;
 

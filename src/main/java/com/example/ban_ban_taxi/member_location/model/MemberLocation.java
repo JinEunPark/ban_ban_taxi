@@ -1,4 +1,4 @@
-package com.example.ban_ban_taxi.geo_location.model;
+package com.example.ban_ban_taxi.member_location.model;
 
 import com.example.ban_ban_taxi.member.model.Member;
 import jakarta.persistence.*;
