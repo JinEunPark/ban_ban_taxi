@@ -1,14 +1,12 @@
 package com.example.ban_ban_taxi.com.api.result;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class Result {
     private  Integer resultCode;
     private String resultMessage;

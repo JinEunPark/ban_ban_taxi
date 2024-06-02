@@ -41,6 +41,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    @Transactional
     public void updateMember(MemberUpdateDto updateDto) {
         Optional<Member> result = memberRepository.findMemberById(updateDto.getId());
         Member member = result
@@ -52,6 +53,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    @Transactional
     public void deleteMemberById(Long id) {
         Optional<Member> result = memberRepository.findMemberById(id);
 

@@ -2,10 +2,7 @@ package com.example.ban_ban_taxi.com.api;
 
 import com.example.ban_ban_taxi.com.api.result.Result;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -23,5 +20,4 @@ public class Api<T> {
         api.body = data;
         return api;
     }
-
 }
