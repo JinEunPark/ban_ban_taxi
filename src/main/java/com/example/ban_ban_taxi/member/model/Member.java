@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 
@@ -23,6 +24,10 @@ public class Member {
     private Long id;
     @Column
     private String name;
+
+    @Column
+    @Length(min=3, max=100)
+    private String password;
 
     @Column
     @Email(message = "올바른 email 형식이 필요합니다")

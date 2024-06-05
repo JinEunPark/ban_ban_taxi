@@ -1,5 +1,8 @@
 package com.example.ban_ban_taxi.member.service.impl;
 
+import com.example.ban_ban_taxi.com.error.ErrorCode;
+import com.example.ban_ban_taxi.com.error.ErrorCodeIfs;
+import com.example.ban_ban_taxi.com.exception.BusinessLogicException;
 import com.example.ban_ban_taxi.member.dto.*;
 import com.example.ban_ban_taxi.member.model.Member;
 import com.example.ban_ban_taxi.member.repositroy.MemberRepository;
@@ -22,7 +25,7 @@ public class MemberServiceImpl implements MemberService {
 
         Optional<Member> memberOpt = memberRepository.findMemberByEmail(postDto.getEmail());
 
-        if(memberOpt.isPresent()) throw new RuntimeException("중복된 이메일은 시용힐 수 없습니다");
+        if(memberOpt.isPresent()) throw new BusinessLogicException(ErrorCode.DUPLICATION_EMAIL_ERROR);
 
         Member member = postDto.of();
         Member saved = memberRepository.save(member);
@@ -35,7 +38,7 @@ public class MemberServiceImpl implements MemberService {
 
         Optional<Member> result = memberRepository.findMemberById(id);
         Member response = result
-                .orElseThrow(()-> new RuntimeException("there is no Member id"));
+                .orElseThrow(()-> new BusinessLogicException(ErrorCode.USER_NOT_FOUND));
 
         return MemberResponseDto.to(response);
     }
@@ -45,7 +48,7 @@ public class MemberServiceImpl implements MemberService {
     public void updateMember(MemberUpdateDto updateDto) {
         Optional<Member> result = memberRepository.findMemberById(updateDto.getId());
         Member member = result
-                .orElseThrow(()-> new RuntimeException("there is no Member id"));
+                .orElseThrow(()-> new BusinessLogicException(ErrorCode.USER_NOT_FOUND));
 
         member.setMember(updateDto.to());
         memberRepository.updateMember(member);
@@ -58,7 +61,7 @@ public class MemberServiceImpl implements MemberService {
         Optional<Member> result = memberRepository.findMemberById(id);
 
         Member member = result
-                .orElseThrow(()-> new RuntimeException("there is no Member id"));
+                .orElseThrow(()-> new BusinessLogicException(ErrorCode.USER_NOT_FOUND,"생성된 유저가 없어 삭제를 실행할 수 없습니다"));
 
         memberRepository.deleteById(id);
         return;

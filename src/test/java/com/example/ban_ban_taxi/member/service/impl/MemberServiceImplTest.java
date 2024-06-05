@@ -23,10 +23,10 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class MemberServiceImplTest {
-
+    // mock 객체 생성
     @Mock
     private MemberRepository memberRepository;
-
+    //mock 객체를 주입할 객체
     @InjectMocks
     private MemberServiceImpl memberService;
 

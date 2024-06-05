@@ -8,10 +8,11 @@ import com.example.ban_ban_taxi.member.dto.MemberResponseDto;
 import com.example.ban_ban_taxi.member.dto.MemberUpdateDto;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 public interface MemberController {
-     Api<MemberIdDto> createMember(@RequestBody MemberPostDto dto);
-     Api updateMember(@RequestBody MemberUpdateDto dto);
-     Api deleteMember(@RequestParam Long memberId);
-     Api<MemberResponseDto> readMember(@RequestParam Long memberId);
+     Api<MemberIdDto> createMember( MemberPostDto dto);
+     Api updateMember( MemberUpdateDto dto);
+     Api deleteMember( Long memberId);
+     Api<MemberResponseDto> readMember( Long memberId);
 }

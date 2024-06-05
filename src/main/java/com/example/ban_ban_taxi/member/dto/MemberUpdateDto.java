@@ -9,9 +9,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class MemberUpdateDto {
-    Long id;
-    String email;
-    String name;
+    private Long id;
+    private String email;
+    private String name;
+
+    private String password;
 
     public Member to(){
         return Member.builder()
