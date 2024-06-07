@@ -33,7 +33,7 @@ public class Member {
     @Email(message = "올바른 email 형식이 필요합니다")
     private String email;
 
-    @OneToOne(mappedBy = "memberId")
+    @OneToOne(mappedBy = "memberId",orphanRemoval = true)
     private TaxiMember taxiMember;
 
     @CreationTimestamp

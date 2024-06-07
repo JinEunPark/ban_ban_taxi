@@ -12,10 +12,10 @@ public class TaxiMember {
     private Long id;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name="taxi_group_id",nullable = false)
     private TaxiGroup taxiGroupId; //연관관계 주인
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(name="member_id", nullable = false)
     private Member memberId; //연관관계 주인
 }
